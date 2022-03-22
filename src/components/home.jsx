@@ -167,7 +167,7 @@ class Home extends React.Component {
   handleApiRequest = (e) => {
     e.preventDefault();
     console.log(this.state.access_token, authClient.generateRandomValue());
-    fetch(`https://pbiembedpocw.azurewebsites.net/api/pbiembed?code=TXYa2eGqBqDk2DD0jWgY4SQW9k410bfa0NNb3nOplCqULx4Ns8Spjw==`, {
+    fetch(`http://localhost:7071/api/pbiembed`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${this.state.access_token}`
