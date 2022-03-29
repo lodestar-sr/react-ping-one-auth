@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import authClient from '../sdk/api'
 import PropTypes from 'prop-types';
 import _ from "lodash";
@@ -77,7 +77,6 @@ const Home = () => {
             })
     }
 
-
     const hashes = authClient.parseHash();
     if (hashes.error && hashes.error_description) {
         setErroMessage(hashes.error + ': ' + hashes.error_description)
@@ -119,11 +118,7 @@ const Home = () => {
     // Replace current URL without adding it to history entries
     window.history.replaceState({}, '', '/');
 
-
-
-
-    // send api request 
-
+    // send api request
     const handleApiRequest = (e) => {
         e.preventDefault();
         // console.log(access_token, "jwt", localStorage.getItem('idToken'));
@@ -147,7 +142,7 @@ const Home = () => {
                 <em>
                     Congratulations! This is a secure resource.
                 </em>
-                <p />
+                <p/>
                 <div className="input-field">
                     <button type="button" onClick={handleSignOff}> Sign Off
                     </button>
@@ -157,9 +152,9 @@ const Home = () => {
                         <button type='submit'>Request BI Content</button>
                     </form>
                 </div>
-                <InfoTable btnLabel={'User Information'} data={userInfo} />
+                <InfoTable btnLabel={'User Information'} data={userInfo}/>
                 <InfoTable btnLabel={'User Id Token Information'}
-                    data={idTokenJson} />
+                           data={idTokenJson}/>
             </div>
         ) :
         (
@@ -181,7 +176,6 @@ const Home = () => {
         </div>
     );
 };
-
 
 Home.propTypes = {
     environmentId: PropTypes.string.isRequired,
